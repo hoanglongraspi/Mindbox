@@ -1,4 +1,4 @@
-## [MindBox.study](https://mindbox.study/)
+## [MindBox.study](https://mindbox.study/vi)
 
 ![Alt text](/assert/img/mindbox.png)
 
