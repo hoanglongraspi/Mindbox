@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Time Management - Study Tracker</title>
+    <link href="../assert/css/time.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="center-container">
+        <a style="text-align: center;" href="/index.html">
+            <img src="../assert/img/MindBoxnobg.png"  style="width: 15%;">
+        </a>
+        
+        <h1>Study Session Tracker</h1>
+    </div>
+
+
+    <div class="timer">00:00:00</div>
+
+    <div class="controls">
+        <button id="session-toggle" onclick="toggleSession()">Start Session</button>
+    </div>
+
+    <div class="sessions-log">
+        <h2>Study Sessions</h2>
+        <ul id="session-list"></ul>
+    </div>
+
+    <div class="summary">
+        <h2>Productivity Summary</h2>
+        <p>Total Study Time: <span id="total-time">0</span> seconds</p>
+        <div class="chart-container">
+            <canvas id="studyChart"></canvas>
+        </div>
+    </div>
+    <script src="../assert/js/time.js"></script>
+</body>
+</html>

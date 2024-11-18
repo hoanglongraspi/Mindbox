@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindbox Notes</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="../assert/css/new_notes.css" rel="stylesheet">
+</head>
+<body>
+    <div class="center-container">
+        <a style="text-align: center;" href="/index.html">
+            <img src="../assert/img/MindBoxnobg.png"  style="width: 15%;">
+        </a>
+        <h1>Note Editor with Folders</h1>
+    </div>
+    
+    
+    <div class="container">
+        <!-- Folders List -->
+        <div class="folders">
+            <h2>Thư mục</h2>
+            <ul id="foldersList"></ul>
+            <textarea type="text" id="folderInput" style="width: 150px; height: 20px;" placeholder="Tên thư mục..."></textarea>
+            <button onclick="addFolder()">Tạo thư mục</button>
+            <br><br>
+            <a style="font-style: italic; color: gray;">Chọn vào từng thư mục để truy cập note</a>
+            <br>
+             
+        </div>
+
+        <!-- Notes List -->
+        <div class="notes">
+            <textarea id="noteInput" class="input" placeholder="Viết Note của bạn ở đây..." ></textarea>
+            <button onclick="saveNote()">Lưu note</button>
+
+            <h2>Notes in <span id="currentFolderName">All Notes</span></h2>
+            <ul id="notesList"></ul>
+            <a style="font-style: italic; color: gray;">Nhấn vào từng note để tương tác</a>
+        </div>
+
+        <!-- Flashcard pop-up -->
+        <div id="flashcardPopup" class="flashcard-popup">
+            <div class="flashcard-container">
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Câu hỏi:</h3>
+                            <p id="flashcardQuestion"></p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Trả lời:</h3>
+                            <p id="flashcardAnswer"></p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="closeFlashcardPopup()">Đóng</button>
+            </div>
+        </div>
+
+        
+    
+    </div>
+
+     <!-- New div for the note page -->
+     <div id="notePage" class="note-page">
+        <div class="note-content">
+            <span class="close-btn" onclick="closeNotePage()">×</span>
+            <h2>Note</h2>
+            <div id="notePageContent"></div>
+            <div class="note-actions">
+                <button onclick="editNote()">Edit</button>
+                <button onclick="summarizeNote()">Summarize</button>
+                <button onclick="createFlashcard()">Create Flashcard</button>
+                <button onclick="generateQuestions()">Generate Questions</button>
+            </div>
+        </div>
+    </div>
+    <div id="summaryPage" class="summary-page">
+        <div class="summary-content">
+            <span class="close-btn" onclick="closeSummaryPage()">×</span>
+            <h2>Note Summary</h2>
+            <p id="summaryContent"></p>
+        </div>
+    </div>
+    <div id="questionsPopup" class="questions-popup">
+        <div class="questions-container">
+            <h3>Tạo câu hỏi:</h3>
+            <ol id="questionsList"></ol>
+            <button onclick="closeQuestionsPopup()">Đóng</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+
+    <!-- API Key Popup -->
+    <div id="popup">
+        <button class="close-popup" onclick="hidePopup()">×</button>
+        <h2>Nhập Gemini API Key</h2>
+        <input type="text" id="apiKeyInput" placeholder="Nhập API Key của bạn ở đây..." />
+        <a> <b>Note: </b>API Key chỉ lưu ở local, không update lên bất kì đâu. </a><br>
+        <a style="margin-top: 10px; color: #69b3a2;" href="https://ai.google.dev/gemini-api/docs/api-key?hl=vi">Cách lấy Gemini API Key</a> 
+        <div class="popup-buttons">
+            <button onclick="saveApiKey()">Lưu</button>
+            <button onclick="hidePopup()">Huỷ bỏ</button>
+        </div>
+    </div>
+
+    <script src="../assert/js/new_notes.js"></script>
+</body>
+</html>

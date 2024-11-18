@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBox.Study - Graph View</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="../assert/css/graph.css" rel="stylesheet">
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">MindBox.study</div>
+        <div class="nav-links">
+            <a href="new_notes.html">Take Note</a>
+            <a href="view_notes.html">View Notes</a>
+            <a href="graph.html">Mind Map</a>
+            <a href="Time.html">Study Clock</a>
+        </div>
+    </nav>
+
+    <div class="controls">
+        <select id="subjectSelect" onchange="updateGraph(this.value)">
+            <option value="all">All Subjects</option>
+        </select>
+    </div>
+    <div id="graph"></div>
+    <div id="nodeInfo"></div>
+
+    <script src="../assert/js/graph.js"></script>
+</body>
+</html>

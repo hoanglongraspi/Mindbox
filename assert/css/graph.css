@@ -1,0 +1,111 @@
+
+:root {
+    --background: #e0e5ec;
+    --text-primary: #2d4263;
+    --neu-shadow: 
+        8px 8px 15px #a3b1c6,
+        -8px -8px 15px #ffffff;
+    --neu-shadow-inset:
+        inset 4px 4px 8px #a3b1c6,
+        inset -4px -4px 8px #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--neu-shadow);
+    margin: 1rem;
+    border-radius: 15px;
+    background: var(--background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    box-shadow: var(--neu-shadow-inset);
+}
+
+#graph {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+.controls {
+    margin-top: 20px;
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.node text {
+    font-size: 12px;
+    fill: #333;
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.node:hover circle {
+    stroke: #000;
+    stroke-width: 3px;
+}
+
+#nodeInfo {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    max-width: 300px;
+    overflow-wrap: break-word;
+    margin-top: 20px;
+}
